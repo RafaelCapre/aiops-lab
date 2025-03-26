@@ -42,15 +42,3 @@ resource "azurerm_cognitive_deployment" "gpt4_deployment" {
     capacity = 10
   }
 }
-
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-
