@@ -2,7 +2,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.0"
+      version = "~> 3.101.0"
     }
   }
 }
@@ -34,7 +34,7 @@ resource "azurerm_cognitive_deployment" "gpt4_deployment" {
   model {
     format  = "OpenAI"
     name    = "gpt-35-turbo"
-    version = "0613"
+    version = "1106"
   }
 
   scale {

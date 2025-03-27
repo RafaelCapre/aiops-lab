@@ -3,10 +3,10 @@ variable "resource_group_name" {
 }
 
 variable "location" {
-  default = "eastus" 
+  default = "westus" 
 }
 
 variable "openai_account_name" {
-  default = "openai-aiops-lab"
+  default = "openai-aiops-lab-2"
 }
 
