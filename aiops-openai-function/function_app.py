@@ -4,6 +4,7 @@ import openai
 import os
 import json
 
+openai.api_type = "azure"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 openai.api_base = os.getenv("OPENAI_ENDPOINT")
 openai.api_version = '2023-05-15'
@@ -15,13 +16,13 @@ app = func.FunctionApp()
 def OpenAIAlertHandler(req: func.HttpRequest) -> func.HttpResponse:
     data = req.get_json()
     prompt = f"""
-    Sou analista SRE.
+    Sou especialista em observabilidade/SRE.
     Recebi o alerta: {data['alerta']}, {data['count']} vezes em {data['periodo']}.
     Qual a causa provável e sugira uma ação imediata curta e prática.
     """
 
     completion = openai.ChatCompletion.create(
-        engine="gpt-35-turbo",
+        engine="gpt-4",  #nome do deployment no Azure
         messages=[{"role": "user", "content": prompt}]
     )
 
